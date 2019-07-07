@@ -20,3 +20,4 @@ if(arr.toString() === ascending.toString()){
 }
 
 console.log(result);
+
