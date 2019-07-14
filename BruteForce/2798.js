@@ -1,5 +1,4 @@
-var fs = require('fs');
-var input = fs.readFileSync('./input.txt').toString().split('\n');
+var input = require('fs').readFileSync('./input.txt').toString().split('\n');
 
 var rangeStart = parseInt(input[0].split(' ')[0]);
 var rangeEnd = parseInt(input[0].split(' ')[1]);
@@ -22,7 +21,10 @@ for(var i = 0; i < inputArr.length; i++){
     }
 }
 
-
-var possibleMaxValue = Math.max.apply(null, sumArr);
+var possibleMaxValue = sumArr[0];
+for(var i = 1; i < sumArr.length; i++){
+    if(possibleMaxValue < sumArr[i]){
+        possibleMaxValue = sumArr[i];
+    }
+}
 console.log(possibleMaxValue);
-
